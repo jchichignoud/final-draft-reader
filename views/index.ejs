@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Draft Reader</title>
+    <!--LOADING ASSETS-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+<!--HEADER NAVIGATION-->
+    <header>
+        <nav class="nav-extended  blue-grey darken-4">
+            <div class="nav-content">
+                <span class="nav-title">Final Draft Reader</span>
+                <div id="open">
+                    <input type="file" class="input" id="input" accept=".fdx" onchange="onChange(event)">
+                    <label for="input" class="btn-floating btn-large halfway-fab waves-effect waves-light orange pulse"><i class="material-icons">file_upload</i></label>
+                </div>
+            </div>
+        </nav>
+        <div id="cover">
+            <!--This will be populated with the script cover and minimise itself while reading (leaving the title visible-->
+        </div>
+    </header>
+<!--MAIN CONTENT-->
+    <main>
+        <div class="page container">
+            <div id="script">
+                <!--This will be populated with the script-->
+            </div>
+        </div>
+        <div class="instruction">
+            <i id="empty" class="material-icons">insert_drive_file</i>
+            <p>Open Final Draft File using the load button</p>
+            <p>If you need an example file, use the <a href="https://fountain.io/" target="_blank">Big Fish script</a></p>
+        </div>
+    </main>
+<!--FOOTER-->
+    <footer class="page-footer blue-grey darken-3">
+        <div class="container">
+            <div class="row">
+                <!--<div class="col l6 s12">-->
+                <!--  <h5 class="white-text">Footer Content</h5>-->
+                <!--  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>-->
+                <!--</div>-->
+                <!--<div class="col l4 offset-l2 s12">-->
+                <!--  <h5 class="white-text">Links</h5>-->
+                <!--  <ul>-->
+                <!--    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>-->
+                <!--    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>-->
+                <!--    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>-->
+                <!--    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>-->
+                <!--  </ul>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="footer-copyright blue-grey darken-4">
+            <div class="container">
+                © 2017 Julien Chichignoud
+                <a class="grey-text text-lighten-4 right" href="https://github.com/jchichignoud/final-draft-reader">See on GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="libs/xml2json.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="scripts/fdxreader.js"></script>
+</body>
+
+</html>

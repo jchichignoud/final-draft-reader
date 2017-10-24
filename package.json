@@ -1,0 +1,23 @@
+{
+  "name": "final-draft-reader",
+  "version": "1.0.0",
+  "description": "read fdx files in browser",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchichignoud/final-draft-reader.git"
+  },
+  "author": "jchichignoud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jchichignoud/final-draft-reader/issues"
+  },
+  "homepage": "https://github.com/jchichignoud/final-draft-reader#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  }
+}

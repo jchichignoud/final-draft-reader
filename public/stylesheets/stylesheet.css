@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+}
+
+main {
+    flex-grow: 2;
+}
+
+#input{
+    display: none;
+}
+
+.sceneheading {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.55em;
+}
+
+
+.instruction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#empty {
+    font-size: 10em;
+    opacity: 0.1;
+    margin: 0 0;
+    align-self: center;
+    text-align: center;
+}
+
+
+.nav-title {
+    margin-left: 20px;
+}
+
+.speech {
+    max-width: 400px;
+    margin: 0 auto;
+    /*border: 1px solid black;*/
+    background-color: #fafafa;
+    padding: 5px 20px;
+}
