@@ -10,6 +10,7 @@ var scenesList = [];
 var characterClean = null;
 var newClass = null;
 var string = null;
+var file = null;
 
 
 ///////////////////////////////////
@@ -19,14 +20,17 @@ var string = null;
 // WHEN CHANGE IS DETECTED IN INPUT FIELD (file selected by user)
 function onChange(event) {
     // select first element of user files (always returns an array)
-    var file = event.target.files[0];
+    file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = function (event) {
         var parser = new DOMParser();
         xmlDoc = parser.parseFromString(event.target.result, "text/xml");
         sendToParse();
+        
     };
+    addCoverPage(file);
     reader.readAsText(file);
+    
 
 }
 
@@ -79,7 +83,6 @@ function parseToJson(xml) {
 
 // parseToHTML (called on scriptContent by button click)
 function parseToHTML(scriptArray){
-    addCoverPage();
     scriptArray.forEach(function (element, index, array){
         // console.log(element);
         if (element.ParagraphType === "Scene Heading") { // if current element is a heading
@@ -182,7 +185,10 @@ function parseToHTML(scriptArray){
 ///////////////////////////////////
 
 function addCoverPage(coverObject){
-    $('#cover').append("<div class='cover'><h1 class='title'>Title will go here</h1><h2>Writer, etc...</div>");
+    var mod = coverObject.lastModifiedDate;
+    var monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    var modString = mod.getDate() + " " + monthArray[mod.getMonth()] + " " + mod.getFullYear();
+    $('#cover').append("<div class='cover'><h5>" + coverObject.name.slice(0, -4) + "</h5><p>" + modString + "</p></div>");
 }
 
 function addSceneToScript(sceneObject){
@@ -302,3 +308,22 @@ function get(obj, key) {
   $(".button-collapse").sideNav();
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
+  
+  var menu = document.querySelector('#cover');
+var menuPosition = menu.getBoundingClientRect();
+var placeholder = document.createElement('div');
+placeholder.style.width = menuPosition.width + 'px';
+placeholder.style.height = menuPosition.height + 'px';
+var isAdded = false;
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset >= menuPosition.top && !isAdded) {
+        menu.classList.add('sticky');
+        menu.parentNode.insertBefore(placeholder, menu);
+        isAdded = true;
+    } else if (window.pageYOffset < menuPosition.top && isAdded) {
+        menu.classList.remove('sticky');
+        menu.parentNode.removeChild(placeholder);
+        isAdded = false;
+    }
+});

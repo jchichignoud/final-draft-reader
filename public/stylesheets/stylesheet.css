@@ -12,6 +12,27 @@ main {
     display: none;
 }
 
+#cover {
+    background-color: #37474f;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#cover h5 {
+    margin: 0;
+    padding-top: 5px;
+    text-align: center;
+}
+
+#cover p {
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
 .sceneheading {
     text-transform: uppercase;
     font-weight: 600;
@@ -47,3 +68,9 @@ main {
     background-color: #fafafa;
     padding: 5px 20px;
 }
+
+.sticky {
+    top: 0;
+    position: fixed;
+}
+
